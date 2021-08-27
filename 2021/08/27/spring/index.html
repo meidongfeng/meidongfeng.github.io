@@ -468,7 +468,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Spring-01"><a href="#Spring-01" class="headerlink" title="Spring-01"></a>Spring-01</h1><h5 id="1-Spring扩展"><a href="#1-Spring扩展" class="headerlink" title="1.Spring扩展"></a>1.Spring扩展</h5><ul>
+                <h1 id="Spring-01"><a href="#Spring-01" class="headerlink" title="Spring-01"></a>Spring-01</h1><h2 id="1、Spring扩展"><a href="#1、Spring扩展" class="headerlink" title="1、Spring扩展"></a>1、Spring扩展</h2><ul>
 <li><p>​    Spring Boot</p>
 <ul>
 <li>一个快速开发的手脚架</li>
@@ -483,16 +483,16 @@
 </li>
 </ul>
 <p>弊端：发展太久，导致配置十分繁琐，配置地狱</p>
-<h5 id="2、IOC理论推导"><a href="#2、IOC理论推导" class="headerlink" title="2、IOC理论推导"></a>2、IOC理论推导</h5><p>原有业务中，用户需求会修改原有代码，如果代码量巨大，成本代价非常昂贵。</p>
+<h2 id="2、IOC理论推导"><a href="#2、IOC理论推导" class="headerlink" title="2、IOC理论推导"></a>2、IOC理论推导</h2><p>原有业务中，用户需求会修改原有代码，如果代码量巨大，成本代价非常昂贵。</p>
 <ul>
 <li>之前，程序是主动创建对象，控制权在程序员手上</li>
 <li>使用set后，程序不再具有主动性，变成被动接受对象</li>
 </ul>
 <p>这种思想从本质上解决了问题，程序员不需要区关注对象的创建，系统耦合性降低，专注于业务实现！这是IOC原型 </p>
-<h5 id="3、Spring-开始："><a href="#3、Spring-开始：" class="headerlink" title="3、Spring 开始："></a>3、Spring 开始：</h5><p>id相当于变量名，</p>
+<h2 id="3、Spring-开始："><a href="#3、Spring-开始：" class="headerlink" title="3、Spring 开始："></a>3、Spring 开始：</h2><p>id相当于变量名，</p>
 <p>ref：Spring配置好的对象</p>
 <p>value：值</p>
-<h5 id="4、IOC创建对象"><a href="#4、IOC创建对象" class="headerlink" title="4、IOC创建对象"></a>4、IOC创建对象</h5><p>默认使用有参构造</p>
+<h2 id="4、IOC创建对象"><a href="#4、IOC创建对象" class="headerlink" title="4、IOC创建对象"></a>4、IOC创建对象</h2><p>默认使用有参构造</p>
 <p>有参构造：</p>
 <ol>
 <li><p>构造函数参数解析匹配</p>
@@ -504,7 +504,7 @@
 <li><p>构造函数参数名称</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;exampleBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;examples.ExampleBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;years&quot;</span> <span class="attr">value</span>=<span class="string">&quot;7500000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;ultimateAnswer&quot;</span> <span class="attr">value</span>=<span class="string">&quot;42&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h5 id="5、Spring配置"><a href="#5、Spring配置" class="headerlink" title="5、Spring配置"></a>5、Spring配置</h5><ol>
+<h2 id="5、Spring配置"><a href="#5、Spring配置" class="headerlink" title="5、Spring配置"></a>5、Spring配置</h2><ol>
 <li><p>别名</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--别名也可以获取到对象--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">&quot;xiaoming&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;Li Ming&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>Bean的配置</p>
@@ -513,7 +513,7 @@
 <p>导入其他配置文件</p>
 </li>
 </ol>
-<h5 id="6、注入"><a href="#6、注入" class="headerlink" title="6、注入"></a>6、注入</h5><ol>
+<h2 id="6、注入"><a href="#6、注入" class="headerlink" title="6、注入"></a>6、注入</h2><ol>
 <li>构造器注入<ul>
 <li>依赖：bean对象的创建依赖于容器</li>
 <li>注入：bean对象的所有属性由容器来注入</li>
@@ -523,6 +523,9 @@
 <li>拓展方式注入</li>
 <li>Bean的作用域</li>
 </ol>
+<h2 id="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"><a href="#7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）" class="headerlink" title="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"></a>7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）</h2><p>1、在xml中显示配置</p>
+<p>2、在java中显示配置</p>
+<p>3、隐式的自动装配bean</p>
 
                 
             </div>
