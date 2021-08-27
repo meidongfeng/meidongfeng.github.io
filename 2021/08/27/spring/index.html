@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#33474d">
-	<title>MEI NET LOG</title>
+	<title>spring | MEI NET LOG</title>
 	<link rel="stylesheet" href="/css/style.css" />
 	
       <link rel="alternate" href="/atom.xml" title="MEI NET LOG" type="application/atom+xml">
@@ -29,13 +29,9 @@
 	</header>
 
 	<main>
-		
-
-
-
-	<article>
+		<article>
 	
-		<h1><a href="/2021/08/27/spring/">spring</a></h1>
+		<h1>spring</h1>
 	
 	<div class="article__infos">
 		<span class="article__date">2021-08-27</span><br />
@@ -109,118 +105,11 @@
 	
 
 	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2021/08/15/JAVA-Thread/">JAVA 多线程</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2021-08-15</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/JAVA/" rel="tag">JAVA</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h1><h2 id="1、线程的创建"><a href="#1、线程的创建" class="headerlink" title="1、线程的创建"></a>1、线程的创建</h2><ol>
-<li><p><strong>从Thread派生类，覆写run</strong></p>
-</li>
-<li><p><strong>创建Thread实例，传入Runnable实例；java8 lambda语法，相当于传入Runnable</strong></p>
-</li>
-<li><p><strong>通过Callable和Future创建线程</strong></p>
-</li>
-<li><p><strong>线程池</strong></p>
-</li>
-<li><p><strong>CompletableFuture：</strong></p>
-<p><em>针对Future做了改进，可以传入回调对象，当异步任务完成或者发生异常时，自动调用回调对象的回调方法</em></p>
-</li>
-</ol>
-<h3 id="1-1各种线程创建方式对比"><a href="#1-1各种线程创建方式对比" class="headerlink" title="1.1各种线程创建方式对比"></a>1.1各种线程创建方式对比</h3><p>1、采用实现Runnable、Callable接口的方式创建多线程时，</p>
-<p>优势是：</p>
-<p>线程类只是实现了Runnable接口或Callable接口，还可以继承其他类。<br>在这种方式下，多个线程可以共享同一个target对象，所以非常适合多个相同线程来处理同一份资源的情况，从而可以将CPU、代码和数据分开，形成清晰的模型，较好地体现了面向对象的思想。</p>
-<p>劣势是：</p>
-<p>编程稍微复杂，如果要访问当前线程，则必须使用Thread.currentThread()方法。</p>
-<p>2、使用继承Thread类的方式创建多线程时，</p>
-<p>优势是：</p>
-<p>编写简单，如果需要访问当前线程，则无需使用Thread.currentThread()方法，直接使用this即可获得当前线程。</p>
-<p>劣势是：</p>
-<p>线程类已经继承了Thread类，所以不能再继承其他父类。</p>
-<p>3、Runnable和Callable的区别</p>
-<p>(1) Callable规定（重写）的方法是call()，Runnable规定（重写）的方法是run()。</p>
-<p>(2) Callable的任务执行后可返回值，而Runnable的任务是不能返回值的。</p>
-<p>(3) call方法可以抛出异常，run方法不可以。</p>
-<p>(4) 运行Callable任务可以拿到一个Future对象，表示异步计算的结果。它提供了检查计算是否完成的方法，以等待计算的完成，并检索计算的结果。通过Future对象可以了解任务执行情况，可取消任务的执行，还可获取执行结果。</p>
-<h2 id="2、线程状态"><a href="#2、线程状态" class="headerlink" title="2、线程状态"></a>2、线程状态</h2><p>1、New</p>
-<p>2、Runnable</p>
-<p>3、Blocked</p>
-<p>4、Waiting</p>
-<p>5、Timed Waiting</p>
-<p>6、Terminated</p>
-<h2 id="3、线程同步"><a href="#3、线程同步" class="headerlink" title="3、线程同步"></a>3、线程同步</h2><p><figure class="figure"><img src="image-20210815224030917.png" alt="image-20210815224030917"><figcaption class="figure__caption">image-20210815224030917</figcaption></figure></p>
-<h2 id="4、线程池"><a href="#4、线程池" class="headerlink" title="4、线程池"></a>4、线程池</h2><p>ExecutorService接口：</p>
-<p>​    FixedThreadPool</p>
-<p>​    CachedThreadPool</p>
-<p>​    SingleThreadExecutor</p>
-
-	
+		<span class="different-posts"><a href="/2021/08/27/spring/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
 
 	
 
 </article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2021/08/12/hello-world/">Hello World，Quick Start</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2021-08-12</span><br />
-		
-		
-	</div>
-
-	
-
-	
-		<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-
-
-	<span class="different-posts">📕 end of posts 📕</span>
-
 
 	</main>
 
