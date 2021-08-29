@@ -523,7 +523,12 @@
 <li>拓展方式注入</li>
 <li>Bean的作用域</li>
 </ol>
-<h2 id="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"><a href="#7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）" class="headerlink" title="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"></a>7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）</h2><h3 id="1、在xml中显示配置"><a href="#1、在xml中显示配置" class="headerlink" title="1、在xml中显示配置"></a>1、在xml中显示配置</h3><p>​            byname：</p>
+<h2 id="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"><a href="#7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）" class="headerlink" title="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"></a>7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）</h2><p>使用注解实现自动装配：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">        https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;--!注解的支持</span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1、在xml中显示配置"><a href="#1、在xml中显示配置" class="headerlink" title="1、在xml中显示配置"></a>1、在xml中显示配置</h3><p>​            byname：</p>
 <p>​            byType：</p>
 <p>​            </p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- id就是变量名--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.Cat&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.Dog&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!--1、byName，会在容器上下文中查找和set方法后面的值对应的bean--&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--2、byType，在上下文中查找和对象类型相同的bean--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;people&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.People&quot;</span> <span class="attr">autowire</span>=<span class="string">&quot;byType&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -537,7 +542,20 @@
 
 
 
-<h3 id="3、隐式的自动装配bean"><a href="#3、隐式的自动装配bean" class="headerlink" title="3、隐式的自动装配bean"></a>3、隐式的自动装配bean</h3>
+<h3 id="3、隐式的自动装配bean"><a href="#3、隐式的自动装配bean" class="headerlink" title="3、隐式的自动装配bean"></a>3、隐式的自动装配bean</h3><h2 id="8、使用注解开发"><a href="#8、使用注解开发" class="headerlink" title="8、使用注解开发"></a>8、使用注解开发</h2><p>在spring4之后，必须导入aop包：</p>
+<p><img src="C:\Users\mdong\AppData\Roaming\Typora\typora-user-images\image-20210829144842013.png" alt="image-20210829144842013"></p>
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><h3 id="1、注解："><a href="#1、注解：" class="headerlink" title="1、注解："></a>1、注解：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">自动装配：</span><br><span class="line">    @Autowired: 自动装配，通过类型名字。手动指定按byName方式注入，使用@Qualifier</span><br><span class="line">    @Nullable：</span><br><span class="line">	@Value</span><br><span class="line"></span><br><span class="line">衍生注解：</span><br><span class="line">	@Component：</span><br><span class="line">		@Repository dao层</span><br><span class="line">		@Service    service层</span><br><span class="line">		@Controller controller层</span><br><span class="line">	功能一样，将每个类注册到spring，装配bean</span><br><span class="line">作用域的注解：</span><br><span class="line">	@Scope</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、xml注解："><a href="#2、xml注解：" class="headerlink" title="2、xml注解："></a>2、xml注解：</h3><ul>
+<li>xml更加万能，适用于任何场合，维护简单</li>
+<li>注解不是自己类使用不了，维护相对复杂</li>
+</ul>
+<p>xml与注解最佳实践：</p>
+<ul>
+<li>xml管理bean</li>
+<li>注解负责属性注入</li>
+</ul>
+
                 
             </div>
             <hr/>
