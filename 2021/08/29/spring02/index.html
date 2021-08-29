@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="spring, MEI NET LOG">
+    <meta name="keywords" content="spring基于注解的容器配置, MEI NET LOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>spring | MEI NET LOG</title>
+    <title>spring基于注解的容器配置 | MEI NET LOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">spring</h1>
+                    <h1 class="description center-align post-title">spring基于注解的容器配置</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/spring/">
+                                <span class="chip bg-color">spring</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-27
+                    2021-08-29
                 </div>
                 
 
@@ -468,90 +468,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Spring-01"><a href="#Spring-01" class="headerlink" title="Spring-01"></a>Spring-01</h1><h2 id="1、Spring扩展"><a href="#1、Spring扩展" class="headerlink" title="1、Spring扩展"></a>1、Spring扩展</h2><ul>
-<li><p>​    Spring Boot</p>
-<ul>
-<li>一个快速开发的手脚架</li>
-<li>基于Spring Boot可以快速开发单个微服务</li>
-<li>约定大于配置</li>
-</ul>
+                <h1 id="基于注解的容器配置"><a href="#基于注解的容器配置" class="headerlink" title="基于注解的容器配置"></a>基于注解的容器配置</h1><h3 id="1、-Required"><a href="#1、-Required" class="headerlink" title="1、@Required"></a>1、@Required</h3><ul>
+<li><p>适用范围：注解适用于 bean 属性 setter 方法</p>
 </li>
-<li><p>Spring Cloud</p>
-<ul>
-<li>基于Spring Boot</li>
-</ul>
+<li><p>notes：</p>
 </li>
 </ul>
-<p>弊端：发展太久，导致配置十分繁琐，配置地狱</p>
-<h2 id="2、IOC理论推导"><a href="#2、IOC理论推导" class="headerlink" title="2、IOC理论推导"></a>2、IOC理论推导</h2><p>原有业务中，用户需求会修改原有代码，如果代码量巨大，成本代价非常昂贵。</p>
-<ul>
-<li>之前，程序是主动创建对象，控制权在程序员手上</li>
-<li>使用set后，程序不再具有主动性，变成被动接受对象</li>
-</ul>
-<p>这种思想从本质上解决了问题，程序员不需要区关注对象的创建，系统耦合性降低，专注于业务实现！这是IOC原型 </p>
-<h2 id="3、Spring-开始："><a href="#3、Spring-开始：" class="headerlink" title="3、Spring 开始："></a>3、Spring 开始：</h2><p>id相当于变量名，</p>
-<p>ref：Spring配置好的对象</p>
-<p>value：值</p>
-<h2 id="4、IOC创建对象"><a href="#4、IOC创建对象" class="headerlink" title="4、IOC创建对象"></a>4、IOC创建对象</h2><p>默认使用有参构造</p>
-<p>有参构造：</p>
-<ol>
-<li><p>构造函数参数解析匹配</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanOne&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingOne&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">&quot;beanTwo&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">&quot;beanThree&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanTwo&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingTwo&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanThree&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingThree&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>构造函数参数类型匹配：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;exampleBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;examples.ExampleBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">type</span>=<span class="string">&quot;int&quot;</span> <span class="attr">value</span>=<span class="string">&quot;7500000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">type</span>=<span class="string">&quot;java.lang.String&quot;</span> <span class="attr">value</span>=<span class="string">&quot;42&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>构造函数参数索引：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;exampleBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;examples.ExampleBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">value</span>=<span class="string">&quot;7500000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">&quot;1&quot;</span> <span class="attr">value</span>=<span class="string">&quot;42&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>构造函数参数名称</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;exampleBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;examples.ExampleBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;years&quot;</span> <span class="attr">value</span>=<span class="string">&quot;7500000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;ultimateAnswer&quot;</span> <span class="attr">value</span>=<span class="string">&quot;42&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="5、Spring配置"><a href="#5、Spring配置" class="headerlink" title="5、Spring配置"></a>5、Spring配置</h2><ol>
-<li><p>别名</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--别名也可以获取到对象--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">&quot;xiaoming&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;Li Ming&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Bean的配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;xiaoming&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.dao.Student&quot;</span> <span class="attr">name</span>=<span class="string">&quot;xioa ming ,LiMing, L&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;singleton&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>import</p>
-<p>导入其他配置文件</p>
-</li>
-</ol>
-<h2 id="6、注入"><a href="#6、注入" class="headerlink" title="6、注入"></a>6、注入</h2><ol>
-<li>构造器注入<ul>
-<li>依赖：bean对象的创建依赖于容器</li>
-<li>注入：bean对象的所有属性由容器来注入</li>
+<h3 id="2、-Autowired"><a href="#2、-Autowired" class="headerlink" title="2、@Autowired"></a>2、@Autowired</h3><ul>
+<li>使用范围：<ul>
+<li>构造函数</li>
+<li>setter方法</li>
+<li>多个参数的方法</li>
+<li>属性</li>
 </ul>
 </li>
-<li>set注入</li>
-<li>拓展方式注入</li>
-<li>Bean的作用域</li>
-</ol>
-<h2 id="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"><a href="#7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）" class="headerlink" title="7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）"></a>7、bean的自动装配（spring在上下文中自动寻找，并自动给bean装配属性）</h2><p>使用注解实现自动装配：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">        https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;--!注解的支持</span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1、在xml中显示配置"><a href="#1、在xml中显示配置" class="headerlink" title="1、在xml中显示配置"></a>1、在xml中显示配置</h3><p>​            byname：</p>
-<p>​            byType：</p>
-<p>​            </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- id就是变量名--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.Cat&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.Dog&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!--1、byName，会在容器上下文中查找和set方法后面的值对应的bean--&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--2、byType，在上下文中查找和对象类型相同的bean--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;people&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mdong.pojo.People&quot;</span> <span class="attr">autowire</span>=<span class="string">&quot;byType&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2、在java中显示配置"><a href="#2、在java中显示配置" class="headerlink" title="2、在java中显示配置"></a>2、在java中显示配置</h3><p>​            1、@Autowired</p>
-<p>​            Autowired默认先按byType，如果发现找到多个bean，则，又按照byName方式比对，如果还有多个，则报出异常。</p>
-<p>​           可以手动指定按byName方式注入，使用@Qualifier。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//依赖：</span></span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">5.2</span><span class="number">.0</span>.RELEASE&lt;/version&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line">     </span><br><span class="line"><span class="comment">//#注解：@Autowired</span></span><br><span class="line"> <span class="meta">@Autowired</span>自动装配，通过类型；</span><br><span class="line"> 属性不唯一，<span class="meta">@Qualifier</span>指定名字</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MovieRecommender</span></span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@Qualifier(&quot;main&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> MovieCatalog movieCatalog;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3、隐式的自动装配bean"><a href="#3、隐式的自动装配bean" class="headerlink" title="3、隐式的自动装配bean"></a>3、隐式的自动装配bean</h3><h2 id="8、使用注解开发"><a href="#8、使用注解开发" class="headerlink" title="8、使用注解开发"></a>8、使用注解开发</h2><p>在spring4之后，必须导入aop包：</p>
-<p><img src="C:\Users\mdong\AppData\Roaming\Typora\typora-user-images\image-20210829144842013.png" alt="image-20210829144842013"></p>
-<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><h3 id="1、注解："><a href="#1、注解：" class="headerlink" title="1、注解："></a>1、注解：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">自动装配：</span><br><span class="line">    @Autowired: 自动装配，通过类型名字。手动指定按byName方式注入，使用@Qualifier</span><br><span class="line">    @Nullable：</span><br><span class="line">	@Value</span><br><span class="line"></span><br><span class="line">衍生注解：</span><br><span class="line">	@Component：</span><br><span class="line">		@Repository dao层</span><br><span class="line">		@Service    service层</span><br><span class="line">		@Controller controller层</span><br><span class="line">	功能一样，将每个类注册到spring，装配bean</span><br><span class="line">作用域的注解：</span><br><span class="line">	@Scope</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、xml注解："><a href="#2、xml注解：" class="headerlink" title="2、xml注解："></a>2、xml注解：</h3><ul>
-<li>xml更加万能，适用于任何场合，维护简单</li>
-<li>注解不是自己类使用不了，维护相对复杂</li>
-</ul>
-<p>xml与注解最佳实践：</p>
-<ul>
-<li>xml管理bean</li>
-<li>注解负责属性注入</li>
 </ul>
 
                 
@@ -579,7 +509,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/27/spring/">http://example.com/2021/08/27/spring/</a>
+                    <a href="http://example.com/2021/08/29/spring02/">http://example.com/2021/08/29/spring02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -617,8 +547,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/spring/">
+                                    <span class="chip bg-color">spring</span>
                                 </a>
                             
                         </div>
@@ -789,7 +719,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-08-27T19-04-03',
+        id: '2021-08-29T15-19-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -817,9 +747,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/08/29/spring02/">
                     <div class="card-image">
@@ -837,9 +768,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -848,6 +779,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -866,13 +798,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/15/JAVA-Thread/">
+                <a href="/2021/08/27/spring/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JAVA 多线程">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="spring">
                         
-                        <span class="card-title">JAVA 多线程</span>
+                        <span class="card-title">spring</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -883,7 +815,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
                             </span>
                         <span class="publish-author">
                             
@@ -896,8 +828,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JAVA/">
-                        <span class="chip bg-color">JAVA</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
