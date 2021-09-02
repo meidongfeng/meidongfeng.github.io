@@ -553,6 +553,40 @@
 <li>xml管理bean</li>
 <li>注解负责属性注入</li>
 </ul>
+<h1 id="Spring-02"><a href="#Spring-02" class="headerlink" title="Spring-02"></a>Spring-02</h1><h2 id="1、SpringAOP"><a href="#1、SpringAOP" class="headerlink" title="1、SpringAOP"></a>1、SpringAOP</h2><p>代理模式分类：</p>
+<p>1、静态代理</p>
+<ul>
+<li><p>角色分析：</p>
+<ul>
+<li>抽象角色：接口或者是抽象类</li>
+<li>真实角色：被代理的角色</li>
+<li>代理角色：代理真实角色，会有一些附属操作</li>
+<li>客户：访问代理对象</li>
+</ul>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>真实角色功能更加纯粹，不需要关注公共业务</li>
+<li>公共业务交给代理，实现业务分工</li>
+<li>公共业务发生扩展时，方便集中管理</li>
+</ul>
+</li>
+<li><p>缺点：一个真实角色会产生一个代理角色，代码量增加  </p>
+</li>
+<li></li>
+</ul>
+<p>2、动态代理：</p>
+<ul>
+<li>基于接口的动态代理<ul>
+<li>JDK动态代理</li>
+</ul>
+</li>
+<li>基于类的动态代理<ul>
+<li>cglib</li>
+<li>java字节码，JAVA ssist</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
