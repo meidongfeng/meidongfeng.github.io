@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="spring基于注解的容器配置, MEI NET LOG">
+    <meta name="keywords" content="注解&amp;反射, MEI NET LOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>spring基于注解的容器配置 | MEI NET LOG</title>
+    <title>注解&amp;反射 | MEI NET LOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">spring基于注解的容器配置</h1>
+                    <h1 class="description center-align post-title">注解&amp;反射</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/spring/">
-                                <span class="chip bg-color">spring</span>
+                            <a href="/tags/%E6%B3%A8%E8%A7%A3%E3%80%81%E5%8F%8D%E5%B0%84/">
+                                <span class="chip bg-color">注解、反射</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-29
+                    2021-09-12
                 </div>
                 
 
@@ -468,29 +468,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于注解的容器配置"><a href="#基于注解的容器配置" class="headerlink" title="基于注解的容器配置"></a>基于注解的容器配置</h1><h3 id="1、-Required"><a href="#1、-Required" class="headerlink" title="1、@Required"></a>1、@Required</h3><ul>
-<li><p>适用范围：注解适用于 bean 属性 setter 方法</p>
+                <h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h3 id="1、概念描述"><a href="#1、概念描述" class="headerlink" title="1、概念描述"></a>1、概念描述</h3><h3 id="2、作用"><a href="#2、作用" class="headerlink" title="2、作用"></a>2、作用</h3><ol>
+<li><p>编译检查</p>
 </li>
-<li><p>notes：</p>
+<li><p>编写文档</p>
+<p>javadoc 命令</p>
 </li>
-</ul>
-<h3 id="2、-Autowired"><a href="#2、-Autowired" class="headerlink" title="2、@Autowired"></a>2、@Autowired</h3><ul>
-<li><p>使用范围：</p>
-<ul>
-<li>构造函数</li>
-<li>setter方法</li>
-<li>多个参数的方法</li>
-<li>属性</li>
-</ul>
+<li><p>代码分析</p>
+<p>通过代码里标识的注解对代码进行分析</p>
 </li>
-<li><p>默认情况下，@Autowired 注释意味着依赖是必须的，它类似于 @Required 注释，然而，你可以使用 @Autowired 的 <strong>（required=false）</strong> 选项关闭默认行为。</p>
-</li>
-</ul>
-<h3 id="3、-Primary"><a href="#3、-Primary" class="headerlink" title="3、@Primary"></a>3、@Primary</h3><ul>
-<li><p>表示当多个 bean 是自动装配到单值依赖项的候选时，应优先考虑特定 bean；作用类似于@Qualifier，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier(&quot;main&quot;)</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="meta">@Qualifier</span>还可以在单个构造函数参数或方法参数上指定注释：</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">(<span class="meta">@Qualifier(&quot;main&quot;)</span> MovieCatalog movieCatalog,</span></span></span><br><span class="line"><span class="params"><span class="function">            CustomerPreferenceDao customerPreferenceDao)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.movieCatalog = movieCatalog;</span><br><span class="line">        <span class="keyword">this</span>.customerPreferenceDao = customerPreferenceDao;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="4、-Qualifier"><a href="#4、-Qualifier" class="headerlink" title="4、@Qualifier"></a>4、@Qualifier</h3><h3 id="5、-Component"><a href="#5、-Component" class="headerlink" title="5、@Component"></a>5、@Component</h3>
+</ol>
+<h3 id="3、注解分类"><a href="#3、注解分类" class="headerlink" title="3、注解分类"></a>3、注解分类</h3><h5 id="1-JDK预定义的注解"><a href="#1-JDK预定义的注解" class="headerlink" title="1.JDK预定义的注解"></a>1.JDK预定义的注解</h5><p>​        @Override： 检查该注解标注的方法是否继承自父类</p>
+<p>​        @Deprecated：废弃的方法</p>
+<p>​        @SupressWarning：告警抑制</p>
+<h5 id="2-自定义注解"><a href="#2-自定义注解" class="headerlink" title="2.自定义注解"></a>2.自定义注解</h5><p>​        格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">元注解</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> 注解名&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注解定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> </span>;</span><br><span class="line">    <span class="function">Person <span class="title">per</span><span class="params">()</span> <span class="keyword">default</span> Person.Person1</span>;</span><br><span class="line">    <span class="function">MyAnnotaion2 <span class="title">annotation</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注解的使用：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@MyAnnotation(value = &quot;100&quot;,annotation = @MyAnnotaion2)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Woker</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        <strong>本质</strong>：注解本质上是一个接口，该接口默认继承    Annotation接口</p>
+<p>​        <strong>属性</strong>：接口中的方法</p>
+<p>​        <strong>要求</strong>： 1、属性的返回值类型：</p>
+<p>​                                基本数据类型、</p>
+<p>​                                String、</p>
+<p>​                                枚举、</p>
+<p>​                                注解、</p>
+<p>​                                以上类型的数组</p>
+<p>​                    2、定义了属性，使用时需要对属性进行赋值</p>
+<p>​                        ·    如果定义属性时使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性赋值</p>
+<p>​                        ·    如果只有一个需要赋值，并且属性名称是value，则value可以省略</p>
+<p>​                        ·    数组赋值时使用{}，如果数组只有一个值，{}可以省略</p>
+<p>​        <strong>元注解</strong>：用于描述注解的注解</p>
+<p>​                1、@Target描述注解作用位置</p>
+<p>​                2、@Retention描述注解保留阶段</p>
+<p>​                3、@Documented描述注解是否被抽取到API文档中</p>
+<p>​                4、@Inherited：描述注解是否被子类继承</p>
+<p>​                </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@Target 注解，属性为value为Enum类型，表明作用范围</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.ANNOTATION_TYPE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Target &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns an array of the kinds of elements an annotation type</span></span><br><span class="line"><span class="comment">     * can be applied to.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> an array of the kinds of elements an annotation type</span></span><br><span class="line"><span class="comment">     * can be applied to</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    ElementType[] value();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//源码中ElementType 定义作用范围：</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">ElementType</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** Class, interface (including annotation type), or enum declaration */</span></span><br><span class="line">    TYPE,</span><br><span class="line">    <span class="comment">/** Field declaration (includes enum constants) */</span></span><br><span class="line">    FIELD,</span><br><span class="line">    <span class="comment">/** Method declaration */</span></span><br><span class="line">    METHOD,</span><br><span class="line">    ... ..。</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="comment">//@Retent注解</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">RetentionPolicy</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be discarded by the compiler.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    SOURCE,</span><br><span class="line">        </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be recorded in the class file by the compiler</span></span><br><span class="line"><span class="comment">     * but need not be retained by the VM at run time.  This is the default</span></span><br><span class="line"><span class="comment">     * behavior.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    CLASS,</span><br><span class="line">        </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be recorded in the class file by the compiler and</span></span><br><span class="line"><span class="comment">     * retained by the VM at run time, so they may be read reflectively.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> java.lang.reflect.AnnotatedElement</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    RUNTIME</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​                                                    </p>
+<h5 id="3-解析注解："><a href="#3-解析注解：" class="headerlink" title="3.解析注解："></a>3.解析注解：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CreateObj(methodName = &quot;show&quot;, className = &quot;com.mei.annotation.Demo1&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaxAnnotationDemo</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">        <span class="comment">//1、获取该类字节码文件对象</span></span><br><span class="line">        Class&lt;SaxAnnotationDemo&gt; demoClass = SaxAnnotationDemo.class;</span><br><span class="line">        <span class="comment">//2、获取注解对象</span></span><br><span class="line">        CreateObj createObj = demoClass.getAnnotation(CreateObj.class);</span><br><span class="line">        <span class="comment">//3、调用注解的抽象方法（属性）获取返回值</span></span><br><span class="line">        <span class="comment">//在内存中生成了一个该注解接口的子类实现</span></span><br><span class="line">        String className = createObj.className();</span><br><span class="line">        String methodName = createObj.methodName();</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">        Class&lt;?&gt; clas = Class.forName(className);</span><br><span class="line">        <span class="comment">//6、创建对象</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = clas.getConstructor();</span><br><span class="line">        Object object = constructor.newInstance();</span><br><span class="line">        <span class="comment">//7、获取对象方法</span></span><br><span class="line">        Method method = clas.getMethod(methodName);</span><br><span class="line">        <span class="comment">//8、调用对象</span></span><br><span class="line">        method.invoke(object);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//注解类：</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> CreateObj &#123;</span><br><span class="line">    <span class="function">String <span class="title">className</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">methodName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="反射：框架的设计灵魂"><a href="#反射：框架的设计灵魂" class="headerlink" title="反射：框架的设计灵魂"></a>反射：框架的设计灵魂</h1><p>反射的概念：将类的各个组成不分封装为其他对象。（反射机制）</p>
+<p><img src="D:\学习笔记\反射&注解\image-20210906220359259.png" alt="image-20210906220359259"></p>
+<p>反射的优势：</p>
+<ol>
+<li>在程序运行中操作这些对象</li>
+<li>可以解耦，提高程序可扩展性</li>
+</ol>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><h2 id="1、获取对象的三种方式"><a href="#1、获取对象的三种方式" class="headerlink" title="1、获取对象的三种方式"></a>1、获取对象的三种方式</h2><p><img src="D:\学习笔记\反射&注解\image-20210907223850933.png" alt="image-20210907223850933"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取对象的三种方式：</span></span><br><span class="line">       <span class="comment">//1、多用于配置文件</span></span><br><span class="line">       Class cls = Class.forName(<span class="string">&quot;com.mei.service.Student&quot;</span>);</span><br><span class="line">       <span class="comment">//2、传参数</span></span><br><span class="line">       Class cls2 = Student.class;</span><br><span class="line">       <span class="comment">//3、通过对象获取字节码文件</span></span><br><span class="line">       Class cls3 = student.getClass();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//同一种字节码文件在一次程序运行中只会被加载一次，不论通过哪种方式获取</span></span><br><span class="line">       System.out.println(cls==cls2);<span class="comment">//true</span></span><br><span class="line">       System.out.println(cls==cls3);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、Class对象的获取功能"><a href="#2、Class对象的获取功能" class="headerlink" title="2、Class对象的获取功能"></a>2、Class对象的获取功能</h2><h5 id="1-获取成员变量"><a href="#1-获取成员变量" class="headerlink" title="1.     获取成员变量"></a>1.     获取成员变量</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取制定名称的 public修饰的成员变量</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Field <span class="title">getField</span><span class="params">(String name)</span> <span class="keyword">throws</span> NoSuchFieldException, SecurityException </span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取所有public修饰的成员变量</span></span><br><span class="line"><span class="keyword">public</span> Field[] getFields() <span class="keyword">throws</span> SecurityException ;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取所有的，设置值前进行权限设置</span></span><br><span class="line">getDeclaredField和getDeclaredFields</span><br><span class="line">Field fieldId=studentClass.getDeclaredField(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">fieldId.setAccessible(<span class="keyword">true</span>); <span class="comment">//暴力反射，忽略权限</span></span><br><span class="line">fieldId.set(student,<span class="string">&quot;123456&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>获取到成员变量后可以进行设置值或者取值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(Object obj, Object value)</span><span class="comment">//对象，值</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-获取构造方法"><a href="#2-获取构造方法" class="headerlink" title="2.     获取构造方法"></a>2.     获取构造方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> Constructor&lt;T&gt; <span class="title">getConstructor</span><span class="params">(Class&lt;?&gt;... parameterTypes)</span><span class="keyword">throws</span> NoSuchMethodException, SecurityException</span>;</span><br><span class="line"> <span class="keyword">public</span> Constructor&lt;?&gt;[] getConstructors() <span class="keyword">throws</span> SecurityException;</span><br><span class="line"><span class="comment">//Constructor&lt;?&gt;[] contextConstructor= context.getConstructors();</span></span><br></pre></td></tr></table></figure>
+
+<p>创建对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">newInstance</span><span class="params">(Object ... initargs)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用空参数构造对象，可以使用class对象的newInstance方法</p>
+<h5 id="3-获取成员方法"><a href="#3-获取成员方法" class="headerlink" title="3.    获取成员方法"></a>3.    获取成员方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> Method <span class="title">getMethod</span><span class="params">(String name, Class&lt;?&gt;... parameterTypes)</span> <span class="keyword">throws</span> NoSuchMethodException, SecurityException</span>;</span><br><span class="line"> <span class="keyword">public</span> Method[] getMethods() <span class="keyword">throws</span> SecurityException;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+
+<p>执行方法：</p>
+<p>invoke；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取构造函数</span></span><br><span class="line">Constructor&lt;Student&gt; constructor = studentClass.getConstructor();</span><br><span class="line"><span class="comment">//实例化对象</span></span><br><span class="line"> Student student1 = constructor.newInstance();</span><br><span class="line"><span class="comment">//获取成员方法（方法名，参数类型class）</span></span><br><span class="line"> Method method = studentClass.getMethod(<span class="string">&quot;eat&quot;</span>, <span class="keyword">int</span>.class);</span><br><span class="line"><span class="comment">//忽略权限</span></span><br><span class="line"> method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//调用成员方法，（对象，value）</span></span><br><span class="line"> method.invoke(student, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-获取类名"><a href="#4-获取类名" class="headerlink" title="4.    获取类名"></a>4.    获取类名</h5><h2 id="3、案例：写一个框架，可以创建任意对象"><a href="#3、案例：写一个框架，可以创建任意对象" class="headerlink" title="3、案例：写一个框架，可以创建任意对象"></a>3、案例：写一个框架，可以创建任意对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、获取类加载器</span></span><br><span class="line">ClassLoader classLoader = Reflect.class.getClassLoader();</span><br><span class="line"><span class="comment">//2、获取资源文件</span></span><br><span class="line">InputStream resourceAsStream = classLoader.getResourceAsStream(<span class="string">&quot;Object.properties&quot;</span>);</span><br><span class="line"><span class="comment">//3、加载资源文件</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">properties.load(resourceAsStream);</span><br><span class="line"><span class="comment">//4、读取资源文件内容</span></span><br><span class="line">String className = properties.getProperty(<span class="string">&quot;ClassName&quot;</span>);</span><br><span class="line">String methodName = properties.getProperty(<span class="string">&quot;MethodName&quot;</span>);</span><br><span class="line"><span class="comment">//5、加载类进内存</span></span><br><span class="line">Class&lt;?&gt; clas = Class.forName(className);</span><br><span class="line"><span class="comment">//6、创建对象</span></span><br><span class="line">Constructor&lt;?&gt; constructor = clas.getConstructor();</span><br><span class="line">Object object = constructor.newInstance();</span><br><span class="line"><span class="comment">//7、获取对象方法</span></span><br><span class="line">Method method = clas.getMethod(methodName);</span><br><span class="line"><span class="comment">//8、调用对象</span></span><br><span class="line">method.invoke(object);</span><br></pre></td></tr></table></figure>
+
+
                 
             </div>
             <hr/>
@@ -516,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/29/spring02/">http://example.com/2021/08/29/spring02/</a>
+                    <a href="http://example.com/2021/09/12/%E6%B3%A8%E8%A7%A3-%E5%8F%8D%E5%B0%84/">http://example.com/2021/09/12/%E6%B3%A8%E8%A7%A3-%E5%8F%8D%E5%B0%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +605,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/spring/">
-                                    <span class="chip bg-color">spring</span>
+                                <a href="/tags/%E6%B3%A8%E8%A7%A3%E3%80%81%E5%8F%8D%E5%B0%84/">
+                                    <span class="chip bg-color">注解、反射</span>
                                 </a>
                             
                         </div>
@@ -726,7 +777,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-08-29T15-19-01',
+        id: '2021-09-12T19-01-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -754,9 +805,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/09/12/%E6%B3%A8%E8%A7%A3-%E5%8F%8D%E5%B0%84/">
                     <div class="card-image">
@@ -774,9 +826,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -785,6 +837,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -803,13 +856,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/27/spring/">
+                <a href="/2021/08/29/spring02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="spring">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="spring基于注解的容器配置">
                         
-                        <span class="card-title">spring</span>
+                        <span class="card-title">spring基于注解的容器配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -820,7 +873,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
                             </span>
                         <span class="publish-author">
                             
@@ -833,8 +886,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
